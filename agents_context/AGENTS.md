@@ -17,21 +17,21 @@ delegates, and offloads work the way a careful human career coach would.
 ## 2. Architecture
 
 ```
-                    ┌───────────────────────────┐
-                    │      CareerForge Agent     │
-                    │  (create_deep_agent on     │
-                    │   LangGraph)                │
-                    └──────────┬────────────────┘
-                               │
-    ┌───────────────┬─────────┴─────────┬──────────────────────┐
+                    ┌─────────────────────────┐
+                    │   CareerForge Agent     │
+                    │  (create_deep_agent on  │
+                    │   LangGraph)            │
+                    └────────────┬────────────┘
+                                 │
+    ┌────────────────┬───────────┴──────┬───────────────────────┐
     ▼                ▼                  ▼                       ▼
-┌─────────┐   ┌───────────────┐  ┌────────────────────┐  ┌──────────────┐
+┌─────────┐   ┌───────────────┐  ┌─────────────────────┐  ┌──────────────┐
 │Planning │   │ File system   │  │ Subagents           │  │ Custom tools │
 │write_   │   │ (profile,     │  │ company-researcher  │  │ internet_    │
-│todos    │   │ job files,    │  │ resume-tailor        │  │ search       │
-│         │   │ drafts)       │  │ cover-letter-writer  │  │ (Tavily)     │
-│         │   │               │  │ interview-coach      │  │              │
-└─────────┘   └───────────────┘  └────────────────────┘  └──────────────┘
+│todos    │   │ job files,    │  │ resume-tailor       │  │ search       │
+│         │   │ drafts)       │  │ cover-letter-writer │  │ (Tavily)     │
+│         │   │               │  │ interview-coach     │  │              │
+└─────────┘   └───────────────┘  └─────────────────────┘  └──────────────┘
 ```
 
 ### 2.1 Planning (`write_todos`)
