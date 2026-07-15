@@ -53,22 +53,22 @@ for the full internal spec the agent itself is given):
 
 ```
                          ┌───────────────────────────┐
-                         │      CareerForge Agent     │
-                         │  create_deep_agent          │
-                         │  (LangGraph)                │
+                         │      CareerForge Agent    │
+                         │  create_deep_agent        │
+                         │  (LangGraph)              │
                          └──────────┬────────────────┘
                                     │
-      ┌───────────────┬────────────┴─────────┬───────────────────────┐
+      ┌───────────────┬─────────────┴────────┬───────────────────────┐
       ▼               ▼                      ▼                       ▼
-┌───────────┐  ┌────────────────┐   ┌────────────────────┐   ┌───────────────┐
-│ Planning  │  │ Virtual files  │   │ Subagents            │   │ Custom tool   │
+┌───────────┐  ┌────────────────┐   ┌───────────────────────┐   ┌───────────────┐
+│ Planning  │  │ Virtual files  │   │ Subagents             │   │ Custom tool   │
 │ write_    │  │ /profile/      │   │ company-researcher →  │   │ internet_     │
 │ todos     │  │ /jobs/<slug>/  │   │   CompanyResearch     │   │ search        │
 │           │  │                │   │ resume-tailor         │   │ (Tavily)      │
 │           │  │                │   │ cover-letter-writer   │   │               │
 │           │  │                │   │ interview-coach →     │   │               │
 │           │  │                │   │   InterviewPrepKit    │   │               │
-└───────────┘  └────────────────┘   └────────────────────┘   └───────────────┘
+└───────────┘  └────────────────┘   └───────────────────────┘   └───────────────┘
 ```
 
 ### Project layout
